@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       backgroundColor: '#fff',
       padding: 20
     },
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        height: '24%'
+        height: '22%'
     },
     title: {
         fontSize: 48,
