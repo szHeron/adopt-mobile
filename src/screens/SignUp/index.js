@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from '
 import { useNavigation } from '@react-navigation/native';
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
+import { OtherConnections } from '../../components/OtherConnections';
 import { styles } from './styles'
 
 export function SignUp(){
@@ -39,15 +40,16 @@ export function SignUp(){
                     />
                 </View>
                 <DefaultButton>
-                    <Text style={{color: '#424242', fontSize: 18}}>Entrar</Text>
+                    <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>Cadastrar</Text>
                 </DefaultButton>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 12}}>
                     <View style={styles.line}/>
                     <Text style={styles.subTitle}>
                         Ou
                     </Text>
                     <View style={styles.line}/>
                 </View>
+                <OtherConnections/>
                 <TouchableOpacity onPress={()=>navigation.goBack()} style={[styles.mixedText, {alignSelf: 'center'}]}>
                     <Text>Já possui uma conta? </Text><Text style={{color: "#D6AC1A"}}>Entre aqui</Text>
                 </TouchableOpacity>

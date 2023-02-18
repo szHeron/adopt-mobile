@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
+import { OtherConnections } from '../../components/OtherConnections';
 import { styles } from './styles'
 
 export function SignIn(){
@@ -31,11 +32,16 @@ export function SignIn(){
                 <Text>Esqueceu a senha? </Text><Text style={{color: "#D6AC1A"}}>Entre aqui</Text>
             </View>
             <DefaultButton>
-                <Text style={{color: '#424242', fontSize: 18}}>Entrar</Text>
+                <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>Entrar</Text>
             </DefaultButton>
-            <Text style={styles.subTitle}>
-                Ou
-            </Text>
+            <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 12}}>
+                <View style={styles.line}/>
+                <Text style={styles.subTitle}>
+                    Ou
+                </Text>
+                <View style={styles.line}/>
+            </View>
+            <OtherConnections/>
             <TouchableOpacity onPress={()=>navigation.navigate('signUp')} style={[styles.mixedText, {alignSelf: 'center'}]}>
                 <Text>Não possui uma conta? </Text><Text style={{color: "#D6AC1A"}}>Crie uma</Text>
             </TouchableOpacity>

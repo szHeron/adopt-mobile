@@ -30,5 +30,11 @@ export const styles = StyleSheet.create({
     subTitle: {
         fontSize: 20,
         fontWeight: '300'
+    },
+    line: {
+        flex: 1,
+        height: 1,
+        backgroundColor: '#A5A5A5',
+        marginHorizontal: 10
     }
 })
