@@ -1,12 +1,14 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+
 
 export const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-      backgroundColor: '#fff',
-      padding: 20
+        width: '100%', 
+        height: Dimensions.get('window').height + 30,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        backgroundColor: '#fff',
+        padding: 20
     },
     textContent: {
         alignItems: 'center',
@@ -30,6 +32,10 @@ export const styles = StyleSheet.create({
     subTitle: {
         fontSize: 20,
         fontWeight: '300'
+    },
+    errorText: {
+        color: '#FF0000',
+        alignSelf: 'flex-start'
     },
     line: {
         flex: 1,

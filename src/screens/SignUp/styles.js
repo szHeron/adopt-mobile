@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
 export const styles = StyleSheet.create({
     container: {
         width: '100%', 
-        height: 800,
+        height: Dimensions.get('window').height + 30,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20

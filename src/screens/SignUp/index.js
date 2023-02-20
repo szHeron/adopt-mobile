@@ -7,11 +7,32 @@ import { OtherConnections } from '../../components/OtherConnections';
 import { styles } from './styles'
 
 export function SignUp(){
-    const [text, setText] = useState("")
+    const [newUser, setNewUser] = useState({name: '', email: '', password: '', confirmPassword: ''})
+    const [error, setError] = useState({errorName: '', errorEmail: '', errorPassword: '', errorConfirm: ''})
+    const [loading, setLoading] = useState(false)
     const navigation = useNavigation()
 
+    async function handleRegister(){
+        if(newUser.name && newUser.password && newUser.email){
+            if(newUser.password === newUser.confirmPassword){
+                setLoading(true)
+                // try {
+                //     await signInWithEmailAndPasswordFirebase(email, password)
+                //     navigation.navigate("home")
+                // }catch(e) {
+                //     setError(err.message)
+                // }
+            }else{
+                setError({...error, errorConfirm: 'Preencha todos os campos.'})
+            }
+        }else{
+            setError({...error, errorConfirm: 'Preencha todos os campos.'})
+        }
+        setLoading(false)
+    }
+
     return (
-        <KeyboardAvoidingView  style={{ backgroundColor: '#fff'}} >
+        <KeyboardAvoidingView style={{ backgroundColor: '#fff'}} >
             <ScrollView contentContainerStyle={styles.container}>
                 <View style={styles.textContent}>
                     <Text style={styles.title}>Cadastrar</Text>
@@ -20,26 +41,30 @@ export function SignUp(){
                 <View style={styles.inputContent}>
                     <DefaultInput
                         placeholder='Nome'
-                        value={text}
-                        onChangeText={text => setText(text)}
+                        value={newUser.name}
+                        onChangeText={text => setNewUser({...newUser, name: text})}
+                        error={error.errorName}
                     />
                     <DefaultInput
                         placeholder='Email'
-                        value={text}
-                        onChangeText={text => setText(text)}
+                        value={newUser.email}
+                        onChangeText={text => setNewUser({...newUser, email: text})}
+                        error={error.errorEmail}
                     />
                     <DefaultInput
                         placeholder='Senha'
-                        value={text}
-                        onChangeText={text => setText(text)}
+                        value={newUser.password}
+                        onChangeText={text => setNewUser({...newUser, password: text})}
+                        error={error.errorPassword}
                     />
                     <DefaultInput
                         placeholder='Confirme sua senha'
-                        value={text}
-                        onChangeText={text => setText(text)}
+                        value={newUser.confirmPassword}
+                        onChangeText={text => setNewUser({...newUser, confirmPassword: text})}
+                        error={error.errorConfirm}
                     />
                 </View>
-                <DefaultButton>
+                <DefaultButton onPress={handleRegister}>
                     <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>Cadastrar</Text>
                 </DefaultButton>
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 12}}>
