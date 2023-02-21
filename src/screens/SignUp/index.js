@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import useAuth from '../../hooks/useAuth'
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
 import { OtherConnections } from '../../components/OtherConnections';
@@ -11,17 +12,18 @@ export function SignUp(){
     const [error, setError] = useState({errorName: '', errorEmail: '', errorPassword: '', errorConfirm: ''})
     const [loading, setLoading] = useState(false)
     const navigation = useNavigation()
+    const { signUpWithEmailAndPasswordFirebase } = useAuth()
 
     async function handleRegister(){
         if(newUser.name && newUser.password && newUser.email){
             if(newUser.password === newUser.confirmPassword){
                 setLoading(true)
-                // try {
-                //     await signInWithEmailAndPasswordFirebase(email, password)
-                //     navigation.navigate("home")
-                // }catch(e) {
-                //     setError(err.message)
-                // }
+                try {
+                    await signUpWithEmailAndPasswordFirebase(newUser.email, newUser.password, newUser.name)
+                    //navigation.navigate("home")
+                }catch(e) {
+                    setError(e.message)
+                }
             }else{
                 setError({...error, errorConfirm: 'Preencha todos os campos.'})
             }

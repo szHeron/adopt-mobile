@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
 import { OtherConnections } from '../../components/OtherConnections';
+import useAuth from '../../hooks/useAuth'
 import { styles } from './styles'
 
 export function SignIn(){
@@ -11,16 +12,17 @@ export function SignIn(){
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigation = useNavigation()
+    const { signInWithEmailAndPasswordFirebase } = useAuth()
 
     async function handleLogin(){
         if(user.email && user.password){
             setLoading(true)
-            // try {
-            //     await signInWithEmailAndPasswordFirebase(email, password)
-            //     navigation.navigate("home")
-            // }catch(e) {
-            //     setError(err.message)
-            // }
+            try {
+                //await signInWithEmailAndPasswordFirebase(user.email, user.password)
+                navigation.navigate("home")
+            }catch(e) {
+                setError(e.message)
+            }
         }else{
             setError('Insira o email e senha!')
         }
