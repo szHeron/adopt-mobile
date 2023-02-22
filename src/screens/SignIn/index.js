@@ -19,7 +19,7 @@ export function SignIn(){
             setLoading(true)
             try {
                 //await signInWithEmailAndPasswordFirebase(user.email, user.password)
-                navigation.navigate("home")
+                navigation.navigate("homeTabs")
             }catch(e) {
                 setError(e.message)
             }

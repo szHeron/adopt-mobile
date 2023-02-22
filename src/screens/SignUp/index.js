@@ -20,7 +20,7 @@ export function SignUp(){
                 setLoading(true)
                 try {
                     await signUpWithEmailAndPasswordFirebase(newUser.email, newUser.password, newUser.name)
-                    //navigation.navigate("home")
+                    //navigation.navigate("homeTabs")
                 }catch(e) {
                     setError(e.message)
                 }
