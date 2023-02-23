@@ -1,22 +1,50 @@
-import { View } from "react-native";
+import { useState, useEffect } from "react";
+import { ActivityIndicator, View } from "react-native";
+import { api } from "../../services/api";
 import { AnimalsList } from "../../components/AnimalsList";
 import { HomeFilters } from "../../components/HomeFilters";
 import { HomeHeader } from "../../components/HomeHeader";
 import { styles } from "./styles";
 
 export function Home(){
-    const animals = [
-        {id: 1, name: 'Juliana', race: 'Golden Retriever', type: 'Cachorro', age: 'Adulto', gender: 0, image: 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*'},
-        {id: 2, name: 'Juliana', race: 'Golden Retriever', type: 'Cachorro', age: 'Adulto', gender: 0, image: 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*'},
-        {id: 3, name: 'Juliana', race: 'Golden Retriever', type: 'Cachorro', age: 'Adulto', gender: 0, image: 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*'},
-        {id: 5, name: 'Juliana', race: 'Golden Retriever', type: 'Cachorro', age: 'Adulto', gender: 0, image: 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*'}
-    ]
+    const [animals, setAnimals] = useState([])
+    const [filters, setFilters] = useState({
+        age: null,
+        name: null,
+        gender: null,
+        type: null
+    })
+    const [displayValue, setDisplayValue] = useState('')
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=>{
+        async function GetAllAnimals(){
+            try{
+                setLoading(true)
+                const response = await api.get('/animal', {
+                    params: filters
+                })
+                setAnimals(response.data)
+                setLoading(false)
+            }catch(e){
+                console.log(e)
+                setLoading(false)
+            }
+        }
+        GetAllAnimals()
+    }, [filters])
+
+
     return (
         <View style={styles.container}>
             <HomeHeader/>
             <View style={styles.content}>
-                <HomeFilters/>
-                <AnimalsList data={animals}/>
+                <HomeFilters filters={filters} setFilters={setFilters} displayValue={displayValue} setDisplayValue={setDisplayValue}/>
+                {loading?(
+                    <ActivityIndicator size='large'/>
+                ):(
+                    <AnimalsList data={animals}/>
+                )}
             </View>
         </View>   
     )

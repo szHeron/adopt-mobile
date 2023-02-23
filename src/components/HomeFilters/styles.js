@@ -39,7 +39,15 @@ export const styles = StyleSheet.create({
         backgroundColor: '#FAF2AF',
         height: 64,
         width: 64,
-        borderRadius: 8,
+        borderRadius: 12
+    },
+    filterImageSelected: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#4CAF50',
+        height: 64,
+        width: 64,
+        borderRadius: 12
     },
     textFilter: {
         color: '#797979',
