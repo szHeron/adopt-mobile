@@ -40,18 +40,18 @@ export function HomeFilters({filters, setFilters, displayValue, setDisplayValue}
             </View>
             <View style={styles.filter}>
                 <TouchableOpacity style={styles.filterItem}>
-                    <AntDesign style={styles.filterIcon} name="filter" size={32} color="#D6AC1A" />
+                    <AntDesign style={styles.filterIcon} name='filter' size={32} color="#D6AC1A" />
                     <Text style={styles.textFilter}>Filtros</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>handleSetFilter('Gato')} style={styles.filterItem}>
                     <View style={filters.type=='Gato'?styles.filterImageSelected:styles.filterImage}>
-                        <Image source={Cat}/>
+                        <Image source={Cat} style={filters.type=='Gato' && {tintColor: '#fff'}}/>
                     </View>
                     <Text style={styles.textFilter}>Gato</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>handleSetFilter('Cachorro')} style={styles.filterItem}>
                     <View style={filters.type=='Cachorro'?styles.filterImageSelected:styles.filterImage}>
-                        <Image source={Dog}/>
+                        <Image source={Dog} style={filters.type=='Cachorro' && {tintColor: '#fff'}}/>
                     </View>
                     <Text style={styles.textFilter}>Cachorro</Text>
                 </TouchableOpacity>

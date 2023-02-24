@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     filterImageSelected: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#FED43D',
         height: 64,
         width: 64,
         borderRadius: 12
