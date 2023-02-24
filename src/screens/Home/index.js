@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
-import { api } from "../../services/api";
+import useAuth from '../../hooks/useAuth'
+import api from "../../services/api";
 import { AnimalsList } from "../../components/AnimalsList";
 import { HomeFilters } from "../../components/HomeFilters";
 import { HomeHeader } from "../../components/HomeHeader";
 import { styles } from "./styles";
 
 export function Home(){
+    const { user } = useAuth()
     const [animals, setAnimals] = useState([])
     const [filters, setFilters] = useState({
         age: null,

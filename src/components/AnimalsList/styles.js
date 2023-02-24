@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
       fontSize: 16,
       color: '#424242'
     }, 
-    textAge: {
+    textOtherInfos: {
       fontWeight: '300',
       fontSize: 15,
       color: '#A5A5A5'

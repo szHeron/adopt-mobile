@@ -1,4 +1,4 @@
-import { FlatList, View, Text, Image } from 'react-native';
+import { FlatList, View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 
@@ -11,16 +11,19 @@ const renderAnimal = ({ item }) => {
                 <View>
                     <Text style={styles.textRace}>{item.race}</Text>
                     <View style={{flexDirection: 'row'}}>
-                        <Text style={styles.textAge}>{item.age}, </Text>
-                        <Text style={styles.textAge}>{item.type}</Text>
+                        <Text style={styles.textOtherInfos}>{item.age}, </Text>
+                        <Text style={styles.textOtherInfos}>{item.type}</Text>
                     </View>
+                    <Text style={styles.textOtherInfos}>{item.gender?'Masculino':'Feminino'}</Text>
                 </View>
                 <View style={styles.contentIcons}>
                     <View style={styles.localization}>
                         <MaterialCommunityIcons name="map-marker-outline" style={{marginStart: -10}} size={30} color='#D6AC1A'/>
                         <Text style={{flexWrap: 'wrap', color: '#A5A5A5'}}>Centro</Text>
                     </View>
-                    <MaterialIcons name='favorite-outline' color='#A5A5A5' size={30}/>
+                    <TouchableOpacity>
+                        <MaterialIcons name='favorite-outline' color='#A5A5A5' size={30}/>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -28,7 +31,6 @@ const renderAnimal = ({ item }) => {
 };
 
 export function AnimalsList(props){
-
     return (
         <FlatList
             data={props.data}

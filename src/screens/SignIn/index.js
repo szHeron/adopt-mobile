@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DefaultInput } from '../../components/DefaultInput'
@@ -8,18 +8,18 @@ import useAuth from '../../hooks/useAuth'
 import { styles } from './styles'
 
 export function SignIn(){
-    const [user, setUser] = useState({email:'', password:''})
+    const [signInUser, setSignInUser] = useState({email:'', password:''})
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigation = useNavigation()
-    const { signInWithEmailAndPasswordFirebase } = useAuth()
+    const { signInWithEmailAndPasswordFirebase, user } = useAuth()
 
     async function handleLogin(){
-        if(user.email && user.password){
+        if(signInUser.email && signInUser.password){
             setLoading(true)
             try {
-                //await signInWithEmailAndPasswordFirebase(user.email, user.password)
-                navigation.navigate("homeTabs")
+                await signInWithEmailAndPasswordFirebase(signInUser.email, signInUser.password)
+                navigation.navigate('homeTabs')
             }catch(e) {
                 setError(e.message)
             }
@@ -28,6 +28,12 @@ export function SignIn(){
         }
         setLoading(false)
     }
+
+    useEffect(()=>{
+        if(user !== null){
+            navigation.navigate('homeTabs') 
+        }
+    },[user])
 
     return (
         <KeyboardAvoidingView style={{ backgroundColor: '#fff'}}>
@@ -39,13 +45,13 @@ export function SignIn(){
                 <View style={styles.inputContent}>
                     <DefaultInput
                         placeholder='Email'
-                        value={user.email}
-                        onChangeText={text => setUser({...user, email: text})}
+                        value={signInUser.email}
+                        onChangeText={text => setSignInUser({...signInUser, email: text})}
                     />
                     <DefaultInput
                         placeholder='Senha'
-                        value={user.password}
-                        onChangeText={text => setUser({...user, password: text})}
+                        value={signInUser.password}
+                        onChangeText={text => setSignInUser({...signInUser, password: text})}
                     />
                 </View>
                 {error&&<Text style={styles.errorText}>Insira o email e senha.</Text>}
