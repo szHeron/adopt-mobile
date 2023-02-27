@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import { Home } from '../screens/Home'
 import { Profile } from '../screens/Profile';
-import { Favorite } from '../screens/Favorites';
+import { AnimalsFavorited } from '../screens/AnimalsFavorited';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,7 @@ export function TabNavigation() {
           let iconName = '';
           if (route.name === 'home') {
             iconName = 'home';
-          } else if (route.name === 'favorite') {
+          } else if (route.name === 'animalsFavorited') {
             iconName = 'favorite-outline';
           } else if (route.name === 'profile') {
             iconName = 'user';
@@ -29,7 +29,7 @@ export function TabNavigation() {
       })}
     >
       <Tab.Screen name="home" component={Home} />
-      <Tab.Screen name="favorite" component={Favorite} />
+      <Tab.Screen name="animalsFavorited" component={AnimalsFavorited} />
       <Tab.Screen name="profile" component={Profile} />
     </Tab.Navigator>
   );
