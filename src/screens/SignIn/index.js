@@ -51,7 +51,7 @@ export function SignIn(){
                     <DefaultInput
                         placeholder='Senha'
                         value={signInUser.password}
-                        type='password'
+                        secureTextEntry={true}
                         onChangeText={text => setSignInUser({...signInUser, password: text})}
                     />
                 </View>

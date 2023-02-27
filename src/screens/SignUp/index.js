@@ -56,14 +56,14 @@ export function SignUp(){
                     <DefaultInput
                         placeholder='Senha'
                         value={newUser.password}
-                        type='password'
+                        secureTextEntry={true}
                         onChangeText={text => setNewUser({...newUser, password: text})}
                         error={error.errorPassword}
                     />
                     <DefaultInput
                         placeholder='Confirme sua senha'
                         value={newUser.confirmPassword}
-                        type='password'
+                        secureTextEntry={true}
                         onChangeText={text => setNewUser({...newUser, confirmPassword: text})}
                         error={error.errorConfirm}
                     />
