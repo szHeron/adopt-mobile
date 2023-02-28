@@ -1,13 +1,15 @@
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { styles } from './styles';
 
 export function DefaultButton(props){
     return (
         <TouchableOpacity
-            style={styles.container}
             {...props}
+            style={[styles.container, props.style]}
         >
-            {props.children}
+            <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>
+                {props.children}
+            </Text>
         </TouchableOpacity>
     )
 }

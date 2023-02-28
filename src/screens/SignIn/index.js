@@ -60,7 +60,7 @@ export function SignIn(){
                     <Text>Esqueceu a senha? </Text><Text style={{color: "#D6AC1A"}}>Entre aqui</Text>
                 </View>
                 <DefaultButton onPress={handleLogin}>
-                    <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>Entrar</Text>
+                    Entrar
                 </DefaultButton>
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 12}}>
                     <View style={styles.line}/>

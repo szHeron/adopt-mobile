@@ -4,7 +4,7 @@ import { styles } from './styles';
 
 export function RenderAnimal({ item, id, handleFavorited }){
     const isFavorited = item["Favorites"]?item["Favorites"].find(favorite => favorite.userId === id):{userId: null}
-    console.log(item.name)
+
     return (
         <View style={styles.animalContainer}>
             <Image source={{uri: item.image}} style={styles.animalImg}/>

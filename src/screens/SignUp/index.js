@@ -69,7 +69,7 @@ export function SignUp(){
                     />
                 </View>
                 <DefaultButton onPress={handleRegister}>
-                    <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>Cadastrar</Text>
+                    Cadastrar
                 </DefaultButton>
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 12}}>
                     <View style={styles.line}/>

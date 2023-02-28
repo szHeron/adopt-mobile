@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
-import { ActivityIndicator, View } from "react-native";
-import { AnimalsList } from "../../components/AnimalsList";
-import { HomeFilters } from "../../components/HomeFilters";
-import { HomeHeader } from "../../components/HomeHeader";
+import { useState, useEffect } from 'react'
+import { ActivityIndicator, TouchableOpacity, View } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
+import { AnimalsList } from '../../components/AnimalsList'
+import { HomeFilters } from '../../components/HomeFilters'
+import { HomeHeader } from '../../components/HomeHeader'
 import useAuth from '../../hooks/useAuth'
-import api from "../../services/api";
-import { styles } from "./styles";
+import api from '../../services/api'
+import { styles } from './styles'
 
 export function Home(){
     const { user } = useAuth()
@@ -63,6 +64,9 @@ export function Home(){
                     <AnimalsList data={animals} user={user} handleFavorited={handleFavorited}/>
                 )}
             </View>
+            <TouchableOpacity style={styles.addNewAnimal}>
+                <AntDesign name="plus" size={32} color="#fff"/>
+            </TouchableOpacity>
         </View>   
     )
 }

@@ -29,13 +29,13 @@ export const styles = StyleSheet.create({
     },
     textCity: {
         color: '#000000',
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold',
         marginRight: 8
     },
     textState: {
         color: '#424242',
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold'
     }
 })

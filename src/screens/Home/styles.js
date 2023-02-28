@@ -11,5 +11,13 @@ export const styles = StyleSheet.create({
     content: {
         marginTop: 16,
         width: '90%'
+    },
+    addNewAnimal: {
+        backgroundColor: '#FED43D',
+        position: 'absolute',
+        bottom: 32,
+        right: 32,
+        borderRadius: 50,
+        padding: 8
     }
 })
