@@ -10,6 +10,8 @@ export function AnimalsList(props){
                     <RenderAnimal item={props.favorited?item.animal:item} id={props.user.id} handleFavorited={props.handleFavorited}/>
                 )
             }}
+            style={{height: '60%'}}
+            contentContainerStyle={{ paddingBottom: 42}}
             keyExtractor={(item) => item.id}
             numColumns={1}
         />
