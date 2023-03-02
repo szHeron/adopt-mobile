@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 
-export function RenderAnimal({ item, id, handleFavorited }){
+export function RenderAnimal({ item, favoriteId, id, handleFavorited }){
     const isFavorited = item["Favorites"]?item["Favorites"].find(favorite => favorite.userId === id):{userId: null}
 
     return (
@@ -23,7 +23,7 @@ export function RenderAnimal({ item, id, handleFavorited }){
                         <MaterialCommunityIcons name='map-marker-outline' style={{marginStart: -10}} size={30} color='#D6AC1A'/>
                         <Text style={{flexWrap: 'wrap', color: '#A5A5A5'}}>Centro</Text>
                     </View>
-                    <TouchableOpacity onPress={()=>handleFavorited(isFavorited, item.id)}>
+                    <TouchableOpacity onPress={()=>handleFavorited(isFavorited, item.id, favoriteId)}>
                         {
                             isFavorited?(
                                 <MaterialIcons name='favorite' color='red' size={30}/>
