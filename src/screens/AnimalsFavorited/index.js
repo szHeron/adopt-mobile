@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ActivityIndicator, View, Text } from 'react-native';
-import { useNavigation, useIsFocused } from '@react-navigation/native'
+import { useIsFocused } from '@react-navigation/native'
 import { AnimalsList } from '../../components/AnimalsList'
 import useAuth from '../../hooks/useAuth'
 import api from '../../services/api';
 import { styles } from './styles';
-
 
 export function AnimalsFavorited(){
     const { user } = useAuth()

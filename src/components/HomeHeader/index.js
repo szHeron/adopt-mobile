@@ -2,7 +2,8 @@ import { View, Image, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 
-export function HomeHeader(){
+export function HomeHeader({user}){
+    console.log(user)
     return (
         <View style={styles.container}>
             <View>
@@ -15,7 +16,7 @@ export function HomeHeader(){
                     <Text style={styles.textState}>Ceará</Text>
                 </View>
             </View>
-            <Image style={styles.userImage} source={{uri: 'https://res.cloudinary.com/dx30jwecr/image/upload/v1676127196/Posts/ifosarfdte26wakso1ok.jpg'}}/>
+            <Image style={styles.userImage} source={{uri: user?user.avatar:'https://res.cloudinary.com/dx30jwecr/image/upload/v1676127196/Posts/ifosarfdte26wakso1ok.jpg'}}/>
         </View>
     )
 }

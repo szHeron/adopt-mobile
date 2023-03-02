@@ -58,7 +58,7 @@ export function Home(){
 
     return (
         <View style={styles.container}>
-            <HomeHeader/>
+            <HomeHeader user={user}/>
             <View style={styles.content}>
                 <HomeFilters filters={filters} setFilters={setFilters} displayValue={displayValue} setDisplayValue={setDisplayValue}/>
                 {loading?(
