@@ -1,11 +1,13 @@
 import { View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation, StackActions } from '@react-navigation/native';
 import { DefaultButton } from '../../components/DefaultButton';
 import useAuth from '../../hooks/useAuth'
 import { styles } from './styles';
 
 export function Profile(){
-    const { user } = useAuth()
+    const { user, signOutAccount } = useAuth()
+    const navigation = useNavigation()
 
     return (
         <View style={styles.container}>
@@ -34,6 +36,7 @@ export function Profile(){
                     Editar
                 </Text>
             </DefaultButton>
+            <Text style={styles.textLogout} onPress={()=>{signOutAccount(), navigation.dispatch(StackActions.popToTop())}}>Sair</Text>
         </View>   
     )
 }

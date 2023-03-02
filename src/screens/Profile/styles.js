@@ -45,5 +45,10 @@ export const styles = StyleSheet.create({
         paddingBottom: 8,
         borderBottomColor: '#A5A5A5',
         borderBottomWidth: 1
+    },
+    textLogout: {
+        fontSize: 18,
+        fontWeight: '600',
+        marginTop: 24
     }
 })
