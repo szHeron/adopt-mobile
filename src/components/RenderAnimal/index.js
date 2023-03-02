@@ -16,7 +16,7 @@ export function RenderAnimal({ item, id, handleFavorited }){
                         <Text style={styles.textOtherInfos}>{item.age}, </Text>
                         <Text style={styles.textOtherInfos}>{item.type}</Text>
                     </View>
-                    <Text style={styles.textOtherInfos}>{item.gender?'Masculino':'Feminino'}</Text>
+                    <Text style={styles.textOtherInfos}>{item.gender}</Text>
                 </View>
                 <View style={styles.contentIcons}>
                     <View style={styles.localization}>

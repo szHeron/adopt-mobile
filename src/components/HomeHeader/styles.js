@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
         height: '20%',
         paddingBottom: 32,
         paddingHorizontal: 32,
-        borderBottomEndRadius: 24,
-        borderBottomStartRadius: 32,
+        borderBottomEndRadius: 20,
+        borderBottomStartRadius: 20,
     },
     userImage: {
         width: 52,

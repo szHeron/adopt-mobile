@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
+import { useNavigation, useIsFocused } from '@react-navigation/native'
 import { AnimalsList } from '../../components/AnimalsList'
 import { HomeFilters } from '../../components/HomeFilters'
 import { HomeHeader } from '../../components/HomeHeader'
@@ -19,6 +20,8 @@ export function Home(){
     })
     const [displayValue, setDisplayValue] = useState('')
     const [loading, setLoading] = useState(true)
+    const isFocused = useIsFocused()
+    const navigation = useNavigation()
 
     async function GetAllAnimals(){
         try{
@@ -38,7 +41,7 @@ export function Home(){
 
     useEffect(()=>{
         GetAllAnimals()
-    }, [filters])
+    }, [filters, isFocused])
 
     async function handleFavorited(isFavorited, animalId){
         if(isFavorited){
@@ -64,7 +67,7 @@ export function Home(){
                     <AnimalsList data={animals} user={user} handleFavorited={handleFavorited}/>
                 )}
             </View>
-            <TouchableOpacity style={styles.addNewAnimal}>
+            <TouchableOpacity style={styles.addNewAnimal} onPress={()=>navigation.navigate('addAnimal')}>
                 <AntDesign name="plus" size={32} color="#fff"/>
             </TouchableOpacity>
         </View>   
