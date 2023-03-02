@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { Image, View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation, StackActions } from '@react-navigation/native';
 import { DefaultButton } from '../../components/DefaultButton';
@@ -12,7 +12,13 @@ export function Profile(){
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Perfil</Text>
-            <FontAwesome name='user-circle' size={156} color='#A5A5A5' />
+            {
+                user.avatar?(
+                    <Image source={{uri: user.avatar}} style={styles.avatarImage} alt='foto de perfil'/>
+                ):(
+                    <FontAwesome name='user-circle' size={156} color='#A5A5A5' />
+                )
+            }
             <Text style={styles.textName}>{user.name.split(' ')[0]}</Text>
             <Text style={styles.textAccount}>
                 Conta

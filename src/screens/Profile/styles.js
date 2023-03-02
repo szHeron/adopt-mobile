@@ -13,10 +13,15 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         marginBottom: 16
     },
+    avatarImage: {
+        width: 150,
+        height: 150,
+        borderRadius: 100
+    },
     title: {
         fontSize: 20,
         fontWeight: '600',
-        margin: 52
+        margin: 48
     },
     textName: {
         fontSize: 18,
