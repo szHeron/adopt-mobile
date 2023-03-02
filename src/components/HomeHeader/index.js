@@ -3,7 +3,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 
 export function HomeHeader({user}){
-    console.log(user)
+
     return (
         <View style={styles.container}>
             <View>
