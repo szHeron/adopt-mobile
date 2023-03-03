@@ -46,17 +46,21 @@ export function AnimalsFavorited(){
             })
             GetAllFavorites()
         }
-    }
-
-    if(loading)
-        return <ActivityIndicator size='large'/>
+    } 
 
     return (
         <View style={styles.container}>
             <Text style={styles.favoriteTitle}>Favoritos</Text>
-            <View style={styles.content}>
-                <AnimalsList favorited data={favorites} user={user} handleFavorited={handleFavorited}/>
-            </View>
+            {
+                loading?(
+                    <ActivityIndicator size='large'/>
+                ):(
+                    <View style={styles.content}>
+                        <AnimalsList favorited data={favorites} user={user} handleFavorited={handleFavorited}/>
+                    </View>
+                )
+            }
+            
         </View>   
     )
 }
