@@ -14,7 +14,7 @@ export function HomeFilters({filters, setFilters, displayValue, setDisplayValue}
             timer = setTimeout(()=>{
                 timer = null;
                 func.apply(context, args)
-            }, 3000)
+            }, 1500)
         }
     }
 

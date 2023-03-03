@@ -14,6 +14,7 @@ export function AnimalsList(props){
             contentContainerStyle={{ paddingBottom: 42}}
             keyExtractor={(item) => item.id}
             numColumns={1}
+            showsVerticalScrollIndicator={false}
         />
     )
 }

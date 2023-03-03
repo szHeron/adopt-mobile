@@ -21,7 +21,7 @@ export function RenderAnimal({ item, favoriteId, id, handleFavorited }){
                 <View style={styles.contentIcons}>
                     <View style={styles.localization}>
                         <MaterialCommunityIcons name='map-marker-outline' style={{marginStart: -10}} size={30} color='#D6AC1A'/>
-                        <Text style={{flexWrap: 'wrap', color: '#A5A5A5'}}>Centro</Text>
+                        <Text style={{flexWrap: 'wrap', color: '#A5A5A5'}}>{item.city}, {item.state}</Text>
                     </View>
                     <TouchableOpacity onPress={()=>handleFavorited(isFavorited, item.id, favoriteId)}>
                         {
