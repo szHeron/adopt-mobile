@@ -66,7 +66,7 @@ Após isso faça o scan do código QR no terminal pelo app do expo.
 
 ## 💻 Projeto
 
-Esse projeto foi desenvolvido com o intuito de aprender mais sobre manipulação de dados e arquivos com o Prisma(Postgres) + ExpressJS, além de reforçar a aprender mais sobre a integração de apis com o axios no react native, aprender mais sobre o desenvolvimento mobile e como manter um aplicativo com uma boa perfomace e desempenho.
+Esse projeto foi desenvolvido com o intuito de aprender mais sobre manipulação de dados e arquivos de forma escalável com o Prisma(Postgres), Clodinary + ExpressJS, além de reforçar a aprender mais sobre a integração de apis com o axios no react native, aprender mais sobre o desenvolvimento mobile e como manter um aplicativo com um bom desempenho.
 
 ## 📝 License
 
