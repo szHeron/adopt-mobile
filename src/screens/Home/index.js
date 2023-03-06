@@ -43,9 +43,9 @@ export function Home(){
         GetAllAnimals()
     }, [filters, isFocused])
 
-    async function handleFavorited(isFavorited, animalId, favoriteId){
+    async function handleFavorited(isFavorited, animalId){
         if(isFavorited){
-            await api.delete(`/favorite/${favoriteId}`)
+            await api.delete(`/favorite/${isFavorited.id}`)
             GetAllAnimals()
         }else{
             await api.post(`/favorite/`,{
