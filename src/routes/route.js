@@ -4,6 +4,7 @@ import { TabNavigation } from './Tabs'
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { AddAnimal } from '../screens/AddAnimal';
+import { ViewAnimal } from '../screens/ViewAnimal';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export function Route(){
             <Stack.Screen name="signUp" component={SignUp}/>
             <Stack.Screen name="homeTabs" component={TabNavigation}/>
             <Stack.Screen name="addAnimal" component={AddAnimal}/>
+            <Stack.Screen name="viewAnimal" component={ViewAnimal}/>
         </Stack.Navigator>
     )
 }
