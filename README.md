@@ -42,6 +42,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Firebase](https://firebase.google.com/)
 - [Postgresql](https://www.postgresql.org/)
 - [Prisma](https://www.prisma.io/)
+- [Cloudinary](https://cloudinary.com/)
 
 ## 🚀 Como executar
 
