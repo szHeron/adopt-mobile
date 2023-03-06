@@ -1,5 +1,4 @@
 import { View, Image, Text } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 
 export function HomeHeader({user}){
@@ -9,7 +8,6 @@ export function HomeHeader({user}){
             <View>
                 <View style={styles.localizationContent}>
                     <Text style={styles.textLocalization}>Localização</Text> 
-                    <MaterialIcons name='keyboard-arrow-down' size={22} color='#797979'/>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                     <Text style={styles.textCity}>Palhano,</Text>
