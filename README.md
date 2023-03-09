@@ -63,13 +63,13 @@ $ yarn ou npm install
 $ npx expo start
 ```
 
+Após isso faça o scan do código QR no terminal pelo app do expo.
+
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através do link abaixo:
 
 - [Layout](https://www.figma.com/file/5a1y7Pdo6m9tB3PKf43w8c/Untitled?node-id=0%3A1&t=3e6SMVs8VUFaFi3i-1) 
-
-Após isso faça o scan do código QR no terminal pelo app do expo.
 
 ## 💻 Projeto
 
