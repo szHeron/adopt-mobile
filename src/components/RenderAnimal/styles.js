@@ -11,17 +11,17 @@ export const styles = StyleSheet.create({
       borderRadius: 16,
       marginBottom: 18
     },
-    animalImg: {
-      height: '100%',
-      width: '42%',
-      borderRadius: 16,
-      marginRight: 16
-    },
     contentInfo: {
       flexDirection: 'column',
       justifyContent: 'space-between',
       height: '100%',
       width: '55%'
+    },
+    animalImg: {
+      height: '100%',
+      width: '42%',
+      borderRadius: 16,
+      marginRight: 16
     },
     contentIcons: {
       flexDirection: 'row',
