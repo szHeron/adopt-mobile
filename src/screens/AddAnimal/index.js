@@ -104,7 +104,7 @@ export function AddAnimal(){
                                     selectedValue={newAnimal.state}
                                     onValueChange={(itemValue, itemIndex) =>
                                         setNewAnimal({...newAnimal, state: itemValue})
-                                    }>
+                                 }>
                                     {states.map((item)=>{
                                         return (
                                             <Picker.Item key={item} label={item} value={item} />
