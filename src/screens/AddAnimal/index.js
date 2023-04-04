@@ -4,11 +4,11 @@ import { View, Text, ScrollView, KeyboardAvoidingView, TouchableOpacity, Image, 
 import { AntDesign } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
-import useAuth from '../../hooks/useAuth'
-import api from '../../services/api'
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
 import { GroupSelection } from '../../components/GroupSelection';
+import useAuth from '../../hooks/useAuth'
+import api from '../../services/api'
 import { styles } from './styles';
 
 export function AddAnimal(){
