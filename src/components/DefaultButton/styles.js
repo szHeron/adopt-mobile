@@ -9,12 +9,12 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       borderRadius: 12,
       shadowColor: '#000',
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
       shadowOffset: {
         width: 0,
         height: 2,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5
+      }
     }
 })
