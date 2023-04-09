@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
       padding: 20,
       alignItems: 'center',
       borderRadius: 12,
-      shadowColor: '#000',
+      shadowColor: '#000000',
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 5,
