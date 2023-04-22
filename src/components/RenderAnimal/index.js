@@ -5,7 +5,7 @@ import { styles } from './styles';
 
 export function RenderAnimal({ item, favoriteId, id, handleFavorited }){
     const navigation = useNavigation()
-    const isFavorited = item["Favorites"]?item["Favorites"].find(favorite => favorite.userId === id):{userId: null}
+    const isFavorited = item['Favorites']?item['Favorites'].find(favorite => favorite.userId === id):{userId: null}
 
     return (
         <TouchableOpacity onPress={()=>navigation.navigate('viewAnimal', {item: item})} style={styles.animalContainer}>
