@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { DefaultInput } from '../../components/DefaultInput'
 import { DefaultButton } from '../../components/DefaultButton'
-import { OtherConnections } from '../../components/OtherConnections';
+import { OtherConnections } from '../../components/OtherConnections'
 import useAuth from '../../hooks/useAuth'
 import { styles } from './styles'
 
