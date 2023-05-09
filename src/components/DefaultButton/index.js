@@ -7,7 +7,7 @@ export function DefaultButton(props){
             {...props}
             style={[styles.container, props.style]}
         >
-            <Text style={{color: '#424242', fontSize: 18, fontWeight: 'bold'}}>
+            <Text style={{color: '#424242', fontWeight: 'bold', fontSize: 18}}>
                 {props.children}
             </Text>
         </TouchableOpacity>
