@@ -40,7 +40,7 @@ export function AnimalsFavorited(){
             await api.delete(`/favorite/${id}`)
             GetAllFavorites()
         }else{
-            await api.post(`/favorite/`,{
+            await api.post('/favorite/',{
                 userId: user.id,
                 animalId: animalId
             })
