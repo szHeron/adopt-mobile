@@ -36,7 +36,7 @@ export function SignIn(){
     },[user])
 
     return (
-        <KeyboardAvoidingView style={{ backgroundColor: '#fff'}}>
+        <KeyboardAvoidingView style={{backgroundColor: '#fff'}}>
             <ScrollView contentContainerStyle={styles.container}>
                 <View style={styles.textContent}>
                     <Text style={styles.title}>Entrar</Text>
